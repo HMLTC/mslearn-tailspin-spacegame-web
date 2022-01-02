@@ -181,7 +181,7 @@ stages:
       inputs:
         command: 'test'
         arguments: '--no-build --configuration $(buildConfiguration)'
-        publishTestResults: false
+        publishTestResults: true
         projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
 
 - stage: 'Staging'
