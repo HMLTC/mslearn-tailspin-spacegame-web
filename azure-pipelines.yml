@@ -76,7 +76,7 @@ stages:
       inputs:
         command: 'test'
         arguments: '--no-build --configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
-        publishTestResults: false
+        publishTestResults: true
         projects: '**/*.Tests.csproj'
       
     - task: DotNetCoreCLI@2
@@ -181,7 +181,7 @@ stages:
       inputs:
         command: 'test'
         arguments: '--no-build --configuration $(buildConfiguration)'
-        publishTestResults: true
+        publishTestResults: false
         projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
 
 - stage: 'Staging'
